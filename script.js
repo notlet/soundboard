@@ -4,7 +4,9 @@ window.addEventListener('load', () => {
     }
     var mainBlockData = '';
     for (i = 0; i < data.length; i++) {
-        mainBlockData = mainBlockData + `<div class="boardElement" id="${data[i].id}"><a id="displayname">${data[i].displayname}</a> <a id="keybind"></a></div>`;
+        var currentKeybind = '';
+        if (getKeyByValue(data[i].id, keybinds) !== undefined) currentKeybind = getKeyByValue(data[i].id, keybinds)
+        mainBlockData = mainBlockData + `<div class="boardElement" id="${data[i].id}"><a id="displayname">${data[i].displayname}</a> <a id="keybind">${currentKeybind}</a></div>`;
     }
     $('.mainBoard').html(mainBlockData);
     $('.boardElement').click(function () {
@@ -15,8 +17,8 @@ window.addEventListener('load', () => {
     });
 })
 
-function getKeyByValue(val) {
-    return Object.keys(this).find(key => this[key] === val);
+function getKeyByValue(val, obj) {
+    return Object.keys(obj).find(key => obj[key] === val);
 }
 
 var keybinds = {};
