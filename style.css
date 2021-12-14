@@ -1,0 +1,62 @@
+body {
+    font-family: monospace;
+    background: #121212;
+    color: #ededed;
+}
+
+* {
+    outline: none;
+    transition: all 100ms;
+    user-select: none;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: bolder;
+    width: fit-content;
+    margin: 10px auto;
+    display: block;
+}
+
+.mainBoard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.bindText {
+    font-size: 10px;
+    margin: 10px auto;
+    width: fit-content;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.boardElement {
+    margin: 10px;
+    padding: 8px 10px;
+    border: solid 2px #ededed;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.boardElement:active {
+    background: #666666;
+    border: solid 2px #ffffff;
+    color: #ffffff;
+}
+
+#displayname {
+    display: block;
+    margin-top: 3px;
+}
+
+#keybind {
+    font-size: 10px;
+    display: block;
+    margin: auto;
+    width: fit-content;
+    margin-top: 3px;
+}
